@@ -1,0 +1,17 @@
+@startuml
+actor Usuario
+participant Main
+participant CalculadoraConsole
+participant Operaciones
+
+Usuario -> Main: Ejecuta programa
+Main -> CalculadoraConsole: Crea instancia
+Main -> Usuario: Muestra menú
+Usuario -> Main: Selecciona opción y números
+Main -> CalculadoraConsole: realizarOperacion(op, n1, n2)
+CalculadoraConsole -> Operaciones: calcular(op, n1, n2)
+Operaciones -> Operaciones: Ejecuta operación
+Operaciones --> CalculadoraConsole: Resultado
+CalculadoraConsole --> Main: Resultado
+Main -> Usuario: Muestra resultado
+@enduml

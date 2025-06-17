@@ -1,0 +1,25 @@
+@startuml
+class Main {
+  + main(String[] args)
+}
+
+class CalculadoraConsole {
+  - Operaciones operaciones
+  + realizarOperacion(int, int, int): int
+}
+
+class Operaciones {
+  + SUMA: int
+  + RESTA: int
+  + MULTIPLICACION: int
+  + DIVISION: int
+  + calcular(int, int, int): int
+  + suma(int, int): int
+  + resta(int, int): int
+  + multiplicacion(int, int): int
+  + division(int, int): int
+}
+
+Main --> CalculadoraConsole
+CalculadoraConsole --> Operaciones
+@enduml
